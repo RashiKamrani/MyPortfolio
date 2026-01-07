@@ -1453,6 +1453,38 @@ textarea::placeholder {
   width: 8px;
 }
 
+/* Scroll-to-top button */
+.scrollTopBtn {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.4);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  z-index: 1200;
+}
+
+.scrollTopBtn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.light .scrollTopBtn {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: #08122a;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #6366f1;
   border-radius: 10px;

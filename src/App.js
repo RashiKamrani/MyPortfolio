@@ -26,6 +26,18 @@ function App() {
     window.addEventListener("mousemove", moveCursor);
     return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
+  
+  // SCROLL TO TOP BUTTON VISIBILITY
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowScroll(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className={theme === "dark" ? "dark" : "light"}>
@@ -71,7 +83,7 @@ function App() {
                   width="28"
                 />
               </a>
-
+               
 
             </div>
           </div>
@@ -117,6 +129,16 @@ function App() {
 
 
       <footer>© 2026 | Designed by Rashi</footer>
+
+      {/* Scroll to top button */}
+      <button
+        className={`scrollTopBtn ${showScroll ? "visible" : ""}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Scroll to top"
+      >
+        ↑
+      </button>
+
       <div className="customCursor"></div>
     </div>
   );

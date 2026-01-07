@@ -547,3 +547,25 @@ textarea::placeholder {
 .dark .contactSection {
   background: transparent !important;
 }
+
+/* 🔼 Scroll To Top Button */
+.scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.scrollTopBtn:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 0, 0, 0.9);
+}
