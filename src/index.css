@@ -1,13 +1,549 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background:#0d0d0d;
+  color:white;
+  font-family: Poppins, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main{
+  display:flex;
+}
+
+.sidebar{
+  width:320px;
+  height:100vh;
+  background:#141414;
+  padding:30px;
+  border-right:2px solid #2b2b2b;
+}
+
+.profile{
+  width:120px;
+  border-radius:50%;
+  display:block;
+  margin:auto;
+}
+
+.role{
+  background:#2b2b2b;
+  padding:6px 10px;
+  border-radius:20px;
+  text-align:center;
+  margin:5px 0 10px 0;
+}
+
+.infoBox{
+  background:#1b1b1b;
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.btn{
+  width:100%;
+  margin-top:20px;
+  padding:10px;
+  background:#f7b500;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.content{
+  padding:50px;
+  flex:1;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#1b1b1b;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid #2b2b2b;
+}
+
+
+/* CUSTOM CURSOR */
+.customCursor{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#6cf3ff;
+  position:fixed;
+  top:0;
+  left:0;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:transform .15s ease, width .15s ease, height .15s ease;
+  z-index:9999;
+  mix-blend-mode:difference;
+}
+
+/* Hover grow */
+a:hover ~ .customCursor,
+button:hover ~ .customCursor{
+  width:28px;
+  height:28px;
+}
+
+/* SKILLS SECTION */
+/* =====================================================
+   SKILLS SECTION BACKGROUND
+===================================================== */
+
+/* LIGHT MODE */
+.light .skillsSection {
+  background: #f6f7fb; /* SAME as other light sections */
+  padding: 100px 80px;
+}
+
+/* DARK MODE */
+.dark .skillsSection {
+  background: transparent; /* global gradient continues */
+  padding: 100px 80px;
+}
+
+/* =====================================================
+   SKILLS TITLE
+===================================================== */
+
+.skillsSection h2 {
+  font-size: 46px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.skillsSection h2 span {
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skillsSection p {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 70px;
+  font-size: 16px;
+}
+
+/* Dark subtitle */
+.dark .skillsSection p {
+  color: #c7d2fe;
+}
+
+/* =====================================================
+   SKILLS GRID
+===================================================== */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* =====================================================
+   SKILL CARD – LIGHT MODE
+===================================================== */
+
+.light .skillsCard {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 45px 35px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  transition: all 0.35s ease;
+}
+
+.light .skillsCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+}
+
+/* =====================================================
+   SKILL CARD – DARK MODE (GRADIENT 🔥)
+===================================================== */
+
+.dark .skillsCard {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.35),
+    rgba(34, 211, 238, 0.15)
+  );
+  backdrop-filter: blur(14px);
+  border-radius: 26px;
+  padding: 45px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.35s ease;
+}
+
+.dark .skillsCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 55px rgba(99, 102, 241, 0.45);
+}
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.skillsCard h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Light */
+.light .skillsCard h3 {
+  color: #1e293b;
+}
+
+/* Dark */
+.dark .skillsCard h3 {
+  color: #ffffff;
+}
+
+/* =====================================================
+   SKILL ITEMS
+===================================================== */
+
+.skillsItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Light chips */
+.light .skillItem {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Dark chips */
+.dark .skillItem {
+  background: rgba(255, 255, 255, 0.15);
+  color: #e0f2ff;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 70px 30px;
+  }
+
+  .skillsSection h2 {
+    font-size: 36px;
+  }
+}
+
+
+/* projects */
+.projectsSection {
+  padding: 100px 80px;
+  background: #0b0f1a;
+  color: white;
+}
+
+.projectsTitle {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #9f9fff;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.projectCard {
+  height: 260px;
+  background: linear-gradient(135deg, #1a1f36, #0f1324);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px);
+}
+
+.projectOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 19, 36, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.projectCard:hover .projectOverlay {
+  opacity: 1;
+}
+
+.projectOverlay h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #9f9fff;
+}
+
+.projectOverlay p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d6d9ff;
+  margin-bottom: 12px;
+}
+
+.projectOverlay span {
+  font-size: 13px;
+  color: #8b8fff;
+}
+
+/*HERO TEXT FIX */
+
+/* HERO CARD ALWAYS DARK BACKGROUND */
+.heroCard {
+  background: linear-gradient(135deg, #2b0a6f, #4c1d95);
+}
+
+/* FORCE FONT COLORS – BOTH MODES */
+.heroText h1 {
+  color: #ffffff !important;
+}
+
+.heroText h1 span {
+  color: #67e8f9 !important; /* name highlight */
+}
+
+/* Software Engineer */
+.heroText h2,
+.heroText h2.success {
+  color: #a5f3fc !important;
+}
+
+/* Paragraph */
+.heroText p {
+  color: #e5e7eb !important;
+}
+
+/* ================= LIGHT MODE OVERRIDE BLOCK ================= */
+/* This is the MAIN FIX you were missing */
+
+.light .heroText h1,
+.light .heroText h2,
+.light .heroText p,
+.light .heroText span {
+  color: #79de0e !important;
+}
+
+.light .heroText h1 span {
+  color: #67e8f9 !important;
+}
+
+.heroContainer .heroCard .heroText h2.success {
+  color: #38bdf8 !important; /* SKY BLUE */
+  font-weight: 600;
+}
+
+.light .heroContainer .heroCard .heroText h2.success,
+.dark .heroContainer .heroCard .heroText h2.success {
+  color: #38bdf8 !important;
+}
+
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+/* =====================================================
+   LIGHT MODE BACKGROUND (SOFT PEACH – PURE WEBSITE)
+===================================================== */
+body,
+.light {
+  background: linear-gradient(
+    180deg,
+    #fff6ef 0%,
+    #fff9f4 40%,
+    #fffdfb 100%
+  );
+
+  --text-main: #1f2937;
+  --text-sub: #4b5563;
+  --accent: #6366f1;
+  --card-bg: #ffffff;
+
+  color: var(--text-main);
+}
+
+/* =====================================================
+   IMPORTANT: SECTIONS SHOULD NOT OVERRIDE BACKGROUND
+===================================================== */
+section,
+.heroContainer,
+.skillsSection,
+.projectsSection,
+.contactSection {
+  background: transparent;
+}
+
+/* =====================================================
+   GLOBAL TEXT
+===================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+/* =====================================================
+   HERO CARD (PURPLE CARD, TEXT FIXED)
+===================================================== */
+.heroCard {
+  background: linear-gradient(135deg, #2b0a6f, #4c1d95);
+  border-radius: 28px;
+  padding: 60px;
+}
+
+/* Hero text – FORCE VISIBLE */
+.heroText h1 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.heroText h1 span {
+  color: #67e8f9;
+}
+
+.heroText h2,
+.heroText h2.success {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.heroText p {
+  color: #e5e7eb;
+}
+
+/* =====================================================
+   CARDS (SKILLS / PROJECTS / CONTACT)
+===================================================== */
+.card,
+.skillsCard,
+.projectCard,
+.contactCard {
+  background: #ffffff;
+  border-radius: 26px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.skillsCard:hover,
+.projectCard:hover,
+.contactCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.18);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+button {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  border: none;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* =====================================================
+   INPUTS / FORMS
+===================================================== */
+input,
+textarea {
+  background: #f1f5f9;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  padding: 14px 18px;
+  border-radius: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+  .heroCard {
+    padding: 40px;
+  }
+}
+
+/* ================= DARK MODE BACKGROUND (SKILLS GRADIENT) ================= */
+
+.dark {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e1b4b 35%,
+    #312e81 65%,
+    #020617 100%
+  ) !important;
+
+  min-height: 100vh;
+}
+
+/* Make sure sections don't override */
+.dark section,
+.dark .heroContainer,
+.dark .skillsSection,
+.dark .projectsSection,
+.dark .aboutSection,
+.dark .contactSection {
+  background: transparent !important;
 }

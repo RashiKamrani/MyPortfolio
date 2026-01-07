@@ -1,0 +1,112 @@
+/* =======================
+   PROJECT CARD
+======================= */
+
+.projectCard {
+  background: linear-gradient(135deg, #6f7bf7, #7b5cb8);
+  border-radius: 22px;
+  padding: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.projectTopImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+/* TITLE */
+.projectCard h3 {
+  color: #9eb5da;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* CARD TAG (TOP LEFT) */
+.projectCard span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  z-index: 3;
+  backdrop-filter: blur(6px);
+}
+
+/* =======================
+   MODAL – LIGHT MODE
+======================= */
+
+.modalContent {
+  color: #2b2b2b;
+}
+
+.modalContent h2 {
+  color: #4a0013; /* dark burgundy */
+}
+
+.modalContent p {
+  color: #3a3a3a;
+}
+
+/* MODAL TAG – LIGHT MODE */
+.modalContent .modalTag {
+  background: rgba(128, 0, 32, 0.15);
+  color: #2b000c;              /* 🔥 DARK BURGUNDY TEXT */
+  border: 1px solid rgba(128, 0, 32, 0.45);
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =======================
+   MODAL – DARK MODE
+======================= */
+
+@media (prefers-color-scheme: dark) {
+  .modalContent h2 {
+    color: #ffe6a6;
+  }
+
+  .modalContent p {
+    color: #f0e6c8;
+  }
+
+  .modalContent .modalTag {
+    background: rgba(245, 215, 140, 0.25);
+    color: #fff3c4;            /*   LIGHT TEXT */
+    border: 1px solid rgba(245, 215, 140, 0.6);
+  }
+}
+
+
+.modalContent .modalTag {
+  background: rgba(0, 0, 0, 0.65);   /* dark translucent bg */
+  color: #f2f2f2;                   /* off-white text (very visible) */
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.modalContent p {
+  color: #8c8888;        /* default safe */
+  line-height: 1.7;
+}
+.modalContent h2 {
+  color: #6fc8e1;        /* default safe */
+}
