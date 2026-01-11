@@ -121,6 +121,7 @@ button:hover ~ .customCursor{
 .skillsSection h2 span {
   background: linear-gradient(90deg, #6366f1, #22d3ee);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -569,3 +570,4 @@ textarea::placeholder {
   transform: translateY(-4px);
   background: rgba(0, 0, 0, 0.9);
 }
+

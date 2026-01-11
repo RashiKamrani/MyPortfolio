@@ -19,10 +19,7 @@ function About() {
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="linkedin" />
             </a>
 
-            <a href="https://www.instagram.com/rashi.kamrani" target="_blank" rel="noreferrer">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="instagram" />
-            </a>
-
+            
             <a href="/resume.pdf" download>
               <img
                 src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/file-earmark-text.svg"

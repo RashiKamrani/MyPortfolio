@@ -70,9 +70,6 @@ function App() {
               <a href="https://github.com/RashiKamrani" target="_blank" rel="noreferrer">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="github" />
               </a>
-              <a href="https://www.instagram.com/rashi.kamrani" target="_blank" rel="noreferrer">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="instagram" />
-              </a>
               <a href="https://www.linkedin.com/in/rashikamrani" target="_blank" rel="noreferrer">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="linkedin" />
               </a>
@@ -98,7 +95,8 @@ function App() {
             <h1>
               Hi, I am <span>Rashi Kamrani</span>
             </h1>
-            <h2 className="success">Software Engineer</h2>
+           <h2 className="roleTitle">Software Engineer</h2>
+
 
 
             <p>

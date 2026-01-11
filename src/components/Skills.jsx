@@ -54,11 +54,32 @@ function Skills() {
           </div>
         </div>
 
-        {/* BLOCKCHAIN (EMPTY) */}
-        <div className="skillsCard emptyCard">
-          <h3 className="skillCategoryTitle">Blockchain</h3>
-          <div className="emptyText">Coming Soon</div>
-        </div>
+          {/* BLOCKCHAIN */}
+<div className="skillsCard">
+  <h3 className="skillCategoryTitle">Blockchain</h3>
+  <div className="skillsItems">
+    <div className="skillItem">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/solidity.svg" alt="Solidity" />
+      Solidity
+    </div>
+    <div className="skillItem">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/ethereum.svg" alt="Ethereum" />
+      Ethereum
+    </div>
+    <div className="skillItem">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/web3dotjs.svg" alt="Web3.js" />
+      Web3.js
+    </div>
+    <div className="skillItem">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZaVpfhv3kgZA46GoqfVNIFhR6pXIdX4_Rg&s"
+        alt="MetaMask"
+      />
+      MetaMask
+    </div>
+  </div>
+</div>
+
 
         {/* ML & DATA */}
         <div className="skillsCard">

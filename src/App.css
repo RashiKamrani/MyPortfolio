@@ -80,9 +80,9 @@ body{
   align-items:center;
   padding:60px;
   border-radius:25px;
-  background:linear-gradient(135deg,#1f075d,#5b1fa6);
-  color:white;
+  transition:all 0.3s ease;
 }
+
 
 .heroText{
   width:60%;
@@ -91,6 +91,7 @@ body{
 .heroText h1{
   font-size:45px;
 }
+
 
 .heroText span{
   color:#6cf3ff;
@@ -806,6 +807,7 @@ footer{
   margin-bottom: 10px;
   background: linear-gradient(90deg, #6c63ff, #4fd1c5);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -856,6 +858,7 @@ footer{
   font-weight: 800;
   background: linear-gradient(90deg, #fde68a, #facc15);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1453,38 +1456,6 @@ textarea::placeholder {
   width: 8px;
 }
 
-/* Scroll-to-top button */
-.scrollTopBtn {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #22d3ee);
-  color: white;
-  border: none;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.4);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 200ms ease, transform 200ms ease;
-  z-index: 1200;
-}
-
-.scrollTopBtn.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.light .scrollTopBtn {
-  background: linear-gradient(135deg, #f59e0b, #f97316);
-  color: #08122a;
-}
-
 ::-webkit-scrollbar-thumb {
   background: #6366f1;
   border-radius: 10px;
@@ -1535,15 +1506,7 @@ textarea::placeholder {
 /* =====================================================
    PREVENT LIGHT MODE OVERRIDE
 ===================================================== */
-.light .heroCard,
-.light .heroCard h1,
-.light .heroCard h2,
-.light .heroCard p,
-.light .heroCard span {
-  color: #ffffff !important;
-}
 
-/* ===================== */
 /* GLOBAL SECTION TITLES */
 /* ===================== */
 
@@ -1561,6 +1524,7 @@ h2.sectionHeading {
     #dcef86    /* mint */
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
@@ -1610,7 +1574,7 @@ h2.sectionHeading {
 }
 
 .projectContent h3 {
-  color: #ffffff;
+  color: #5e2f2f;
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -1629,7 +1593,7 @@ h2.sectionHeading {
   text-decoration: none;
 }
 
-/* 🔥 TOP IMAGE INSIDE CARD */
+/*  TOP IMAGE INSIDE CARD */
 .projectTopImage {
   width: 100%;
   height: 140px;
@@ -1638,3 +1602,131 @@ h2.sectionHeading {
   border-radius: 18px 18px 0 0;
   margin-bottom: 12px;
 }
+.skillItem img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* DARK MODE */
+.dark .heroCard{
+  background:linear-gradient(135deg,#1f075d,#5b1fa6);
+  color:white;
+}
+
+/* LIGHT MODE */
+.light .heroCard{
+  background:linear-gradient(135deg,#ffffff,#f3f4f6);
+  color:#1a1a1a;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.light .heroCard p{
+  color:#444;
+}
+
+.light .heroCard span{
+  color:#6a5acd;
+}
+
+
+/* ===================== LIGHT MODE HERO ===================== */
+
+.light .heroCard {
+  background: linear-gradient(135deg, #ffe0d1, #ffb6c9);
+  box-shadow: 0 16px 40px rgba(255, 182, 201, 0.45);
+}
+
+/* MAIN HEADING */
+.light .heroCard h1 {
+  color: #6b1f33;
+  font-weight: 700;
+}
+
+/* NAME HIGHLIGHT */
+.light .heroCard h1 span {
+  color: #c0392b;
+}
+
+/* SUBTITLE */
+.light .heroCard h2 {
+  color: #8e2a3b;
+}
+
+/* PARAGRAPH */
+.light .heroCard p {
+  color: #4a1c24;
+  opacity: 0.95;
+}
+
+
+/* BUTTON */
+.light .resumeBtn {
+  background: linear-gradient(135deg, #c0392b, #e17055);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(192, 57, 43, 0.45);
+}
+
+.light .resumeBtn:hover {
+  background: linear-gradient(135deg, #a93226, #d35400);
+}
+
+/* GLOBAL TEXT FIX FOR LIGHT MODE */
+.light {
+  color: #4a1c24; /* warm dark brown */
+}
+
+/* MAIN HEADING */
+.light h1 {
+  color: #6b1f33; /* burgundy */
+}
+
+/* NAME HIGHLIGHT */
+.light h1 span {
+  color: #c0392b; /* warm red-peach */
+}
+
+/* SUBTITLE / SUCCESS TEXT */
+
+/* PARAGRAPH */
+.light p {
+  color: #4a1c24;
+}
+
+/* ================= FORCE FIX – LIGHT MODE TEXT ================= */
+
+/* HERO TEXT WRAPPER */
+.light .heroText {
+  color: #4a1c24 !important;
+}
+
+/* MAIN HEADING */
+.light .heroText h1 {
+  color: #6b1f33 !important;
+}
+
+/* NAME */
+.light .heroText h1 span {
+  color: #c0392b !important;
+}
+
+/* SOFTWARE ENGINEER */
+.light .heroText h2,
+.light .heroText .success {
+  color: #37277e !important;
+}
+
+/* PARAGRAPH */
+.light .heroText p {
+  color: #4a1c24 !important;
+  opacity: 1 !important;
+}
+
+/* FINAL – SOFTWARE ENGINEER NAVY BLUE (LIGHT MODE) */
+.light .heroText h2.roleTitle {
+  color: #0a2540;
+  font-weight: 600;
+}
+
+
